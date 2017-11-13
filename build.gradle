@@ -19,11 +19,13 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+
 group = 'com.chenhui'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 	maven { url "https://repo.spring.io/snapshot" }
 	maven { url "https://repo.spring.io/milestone" }
@@ -42,12 +44,130 @@ dependencies {
 		'optional=true'
     }
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('net.sourceforge.htmlunit:htmlunit')
+	testCompile('org.assertj:assertj-core:3.8.0')
+	testCompile("com.github.stefanbirkner:system-rules:1.16.1")
 }
 
 test {
-  testLogging.showStandardStreams = true
+  //testLogging.showStandardStreams = true
+  include 'com/chenhui/study/*'
+
 }
 
+//down is my study gradle code!!!
 task debug {
+	doLast{
 	 println "java.home is " + System.properties['java.home']
+	 }
 }
+
+/*
+task hello {
+	doLast{
+		println "hello world"
+		println project.hello.name
+		println hello.name
+		println tasks.hello.name
+		println tasks['hello'].name
+	}
+}
+
+
+task upcase {
+	doLast{
+ 		String name="chen hui"
+ 		println "Origin "+name
+ 		String case_name=name.toUpperCase()
+ 		println "Upper "+case_name
+ 	}
+}
+
+task count(dependsOn:'intro'){
+	doLast{
+		4.times{
+			println "$it"
+		}
+	}
+}
+
+task intro(){
+	doLast{
+		println "chenhui"
+	}
+}
+
+//intro.dependsOn hello
+
+task taskX(dependsOn: 'taskY') << {
+    println 'taskX'
+}
+task taskY << {
+    println 'taskY'
+}
+
+task bibao << {
+	description 'test bibao'
+	println 'bibao'	
+}
+
+task bibao.dependsOn{
+	tasks.findAll{
+		task->task.name.startsWith('task')
+	}
+}
+
+task compile <<{
+	println 'compile is started'
+}
+
+compile.doFirst{
+	if(true){
+		throw new StopExecutionException()
+	}
+}
+task jump(dependsOn:'compile'){
+	doLast{
+		println "l am jump"
+	}
+}
+
+apply plugin:HelloPlugin
+
+greeting{
+	message="hi"
+	greeter="Gradle"
+}
+
+class HelloPlugin implements Plugin<Project>{
+	void apply(Project project){
+	
+		project.extensions.create("greeting",HelloPluginExtension)
+		project.task('hello')<<{
+			println	"${project.greeting.message } from ${project.greeting.greeter}"
+		}
+	}
+}
+
+
+class HelloPluginExtension{
+	String message
+	String greeter
+}
+
+task task1 <<{
+	println 'compiling source #1'
+}
+
+task task2(dependsOn:task1)<<{
+	println 'compiling unit tests #2'
+}
+
+task task3(dependsOn:[task1,task2])<<{
+	println 'running unit tests #3'
+}
+
+task task4(dependsOn:[task3,task1])<<{
+	println 'building the distribution $4'
+}
+*/

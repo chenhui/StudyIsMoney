@@ -1,0 +1,5 @@
+task hello{
+	doLast{
+		println "Use File: $buildFile.name in '$buildFile.parentFile.name'."
+	}
+}
