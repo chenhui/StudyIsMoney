@@ -19,4 +19,10 @@
 		<constructor-arg value="study"></constructor-arg>	
 		<constructor-arg value="chenhui"></constructor-arg>
 	</bean>
+	
+	<bean id="cBlankDisc" class="com.chenhui.study.BlankDisc"
+		c:_title="c study"	
+		c:_artist="c chenhui"
+	/>	
+
  </beans>

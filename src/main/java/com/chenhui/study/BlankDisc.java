@@ -10,7 +10,9 @@ public class BlankDisc extends CompactDisk {
 		this.artist = artist;
 	}
 
-	public String Play(){
+	public String play(){
 		return "Playing "+ title + " by " + artist;
 	}
+
+
 }

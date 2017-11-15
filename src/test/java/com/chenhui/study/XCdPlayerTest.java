@@ -39,6 +39,20 @@ public class XCdPlayerTest {
 	@Test
 	public void isBlankDiscExist(){
 		assertNotNull(blankDisk);
+		assertEquals("Playing study by chenhui",blankDisk.play());
+		
 	}
+
+	@Autowired
+	@Qualifier("cBlankDisc")
+	private Disk cBlankDisk;
+	
+	@Test
+	public void isCBlankDiscExist(){
+		assertNotNull(cBlankDisk);
+		assertEquals("Playing c study by c chenhui",cBlankDisk.play());
+		
+	}
+
 }
 
