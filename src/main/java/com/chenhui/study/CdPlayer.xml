@@ -24,5 +24,10 @@
 		c:_0="c study"	
 		c:_1="c chenhui"
 	/>	
+	
+	<bean id="pCdPlayer" class="com.chenhui.study.PCDPlayer">
+		<property name="compactDisk" ref="blankDisc"></property>
+	</bean>
+		
 
  </beans>

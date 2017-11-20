@@ -53,6 +53,16 @@ public class XCdPlayerTest {
 		assertEquals("Playing c study by c chenhui",cBlankDisk.play());
 		
 	}
+	
+	@Autowired
+	@Qualifier("pCdPlayer")
+	private Player pCdPlayer;
+	
+	@Test
+	public void ispCdPlayerExist(){
+		assertNotNull(pCdPlayer);
+		assertEquals("Playing study by chenhui",pCdPlayer.play());
+	}
 
 }
 
