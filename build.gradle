@@ -51,7 +51,7 @@ dependencies {
 
 test {
   //testLogging.showStandardStreams = true
-  include 'com/chenhui/study/*'
+  include 'com/chenhui/study/wire/*'
 
 }
 
