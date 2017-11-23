@@ -1,6 +1,8 @@
-package com.chenhui.study.wire;
+package com.chenhui.study.wire.auto;
 
 import org.springframework.stereotype.Component;
+
+import com.chenhui.study.wire.Disk;
 
 @Component
 public class CompactDisk implements Disk {

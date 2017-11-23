@@ -9,12 +9,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.chenhui.study.wire.java.JCdPlayer;
-import com.chenhui.study.wire.mix.MCdPlayerConfig;
+import com.chenhui.study.wire.java.JCdPlayerConfig;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=MCdPlayerConfig.class)
-public class MixCdPlayerTest {
+@ContextConfiguration(classes=JCdPlayerConfig.class)
+public class JCdPlayerTest {
 	
 	@Autowired
 	private Disk disk;

@@ -8,25 +8,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.chenhui.study.wire.CompactDisk;
-import com.chenhui.study.wire.auto.CDPlayer;
-import com.chenhui.study.wire.auto.CDPlayerConfig;
+import com.chenhui.study.wire.auto.AutoCdPlayerConfig;
+import com.chenhui.study.wire.auto.CdPlayer;
+import com.chenhui.study.wire.java.JCdPlayer;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=CDPlayerConfig.class)
-public class CDPlayerTest {
+@ContextConfiguration(classes=AutoCdPlayerConfig.class)
+public class AutoCdPlayerTest {
 	
 	@Autowired
-	private CompactDisk disk;
+	private Disk disk;
 
 	@Test
 	public void isDiskExist() {
 		assertNotNull(disk);
 	}
-	
+
 	@Autowired
-	private CDPlayer player;
+	private CdPlayer player;
 	
 	@Test
 	public void isPlayerExist(){
@@ -34,4 +34,3 @@ public class CDPlayerTest {
 		assertEquals("play by with Compact disk",player.play());
 	}
 }
-

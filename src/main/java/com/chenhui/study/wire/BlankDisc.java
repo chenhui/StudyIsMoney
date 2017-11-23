@@ -1,5 +1,7 @@
 package com.chenhui.study.wire;
 
+import com.chenhui.study.wire.auto.CompactDisk;
+
 public class BlankDisc extends CompactDisk {
 	
 	private String title;

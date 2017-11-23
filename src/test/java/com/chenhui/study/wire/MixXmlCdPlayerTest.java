@@ -1,6 +1,7 @@
 package com.chenhui.study.wire;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,14 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.chenhui.study.wire.Disk;
 import com.chenhui.study.wire.java.JCdPlayer;
-import com.chenhui.study.wire.java.JCdPlayerConfig;
+import com.chenhui.study.wire.mix.xml.MXSoundSystemConfig;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=JCdPlayerConfig.class)
-public class JCDPlayerTest {
+@ContextConfiguration(classes=MXSoundSystemConfig.class)
+public class MixXmlCdPlayerTest {
 	
 	@Autowired
 	private Disk disk;
@@ -33,4 +33,5 @@ public class JCDPlayerTest {
 		assertNotNull(player);
 		assertEquals("play by with JCompact disk",player.play());
 	}
+	
 }

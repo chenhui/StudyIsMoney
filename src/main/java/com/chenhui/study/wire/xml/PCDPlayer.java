@@ -1,8 +1,8 @@
 package com.chenhui.study.wire.xml;
 
-import com.chenhui.study.wire.CompactDisk;
 import com.chenhui.study.wire.Disk;
 import com.chenhui.study.wire.Player;
+import com.chenhui.study.wire.auto.CompactDisk;
 
 public class PCDPlayer implements Player {
 
