@@ -49,11 +49,13 @@ dependencies {
 	testCompile("com.github.stefanbirkner:system-rules:1.16.1")
 }
 
+/*
 test {
   //testLogging.showStandardStreams = true
   include 'com/chenhui/study/wire/*'
 
 }
+*/
 
 //down is my study gradle code!!!
 task debug {
