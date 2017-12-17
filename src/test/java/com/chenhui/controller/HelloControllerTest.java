@@ -49,8 +49,8 @@ public class HelloControllerTest {
 //    private WebApplicationContext context;
     
     @Autowired
+    
     private WebClient webClient;
-
     
 	@Test
 	public void testExample() throws Exception {
